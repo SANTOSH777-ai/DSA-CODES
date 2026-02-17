@@ -1,0 +1,21 @@
+class Solution{
+    public static void main(String[] args){
+        int [] arr = {2,4,1,6,3};
+        int n = arr.length;
+        //Initializing a prefix.
+        int [] prefix = new int[n];
+        prefix[0] = arr[0];
+        //Storing values in the prefix sum.
+        for(int i = 1;i<n;i++){
+            prefix[i] = prefix[i-1]+arr[i];
+        }
+        //Range sum queries
+        int l = 1;
+        int r = 3;
+        if(l == 0){
+            System.out.println(prefix[r]);
+        }else{
+            System.out.println(prefix[r]-prefix[l-1]);
+        }
+    }
+}
